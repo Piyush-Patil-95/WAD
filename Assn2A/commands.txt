@@ -1,0 +1,82 @@
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST
+$ git clone https://github.com/Piyush-Patil-95/TEST.git
+Cloning into 'TEST'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST
+$ cd TEST
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test02.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git add .
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test02.txt
+
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git commit -m "test02 added"
+[main 14a824f] test02 added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test02.txt
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git remote set-url origin https://github.com/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@Piyush-Patil-95/TEST.git
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git push origin main
+remote: Repository not found.
+fatal: repository 'https://github.com/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@Piyush-Patil-95/TEST.git/' not found
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git remote set-url origin https://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@github.com/Piyush-Patil-95/TEST.git
+
+Piyush@DESKTOP-IRB9JIU MINGW64 /g/TE/WAD/TEST/TEST (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 338 bytes | 338.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Piyush-Patil-95/TEST.git
+   63c69b1..14a824f  main -> main

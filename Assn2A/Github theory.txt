@@ -1,0 +1,143 @@
+Introduction to Git:
+A version Control system is a system that maintains different versions of your project when we work in a team or as an individual. (system managing changes to files) As the project progresses, new features get added to it. So, a version control system maintains all the different versions of your project for you and you can roll back to any version you want without causing any trouble to you for maintaining different versions by giving names to it like MyProject, MyProjectWithFeature1, etc. 
+
+Git Repository Structure:
+It consists of 4 parts:  
+
+-Working directory: This is your local directory where you make the project (write code) and make changes to it.
+-Staging Area (or index): this is an area where you first need to put your project before committing. This is used for code review by other team members.
+-Local Repository: this is your local repository where you commit changes to the project before pushing them to the central repository on Github. This is what is provided by the distributed version control system. This corresponds to the .git folder in our directory.
+-Central Repository: This is the main project on the central server, a copy of which is with every team member as a local repository.
+
+Some commands which relate to repository structure:  
+
+// transfers your project from working directory
+// to staging area.
+git add .
+
+// transfers your project from staging area to 
+// Local Repository.
+git commit -m "your message here"
+
+
+// transfers project from local to central repository.
+// (requires internet)
+git push
+
+Github
+Github basically is a for-profit company owned by Microsoft, which hosts Git repositories online. It helps users share their git repository online, with other users, or access it remotely. You can also host a public repository for free on Github. 
+
+User share their repository online for various reasons including but not limited to project deployment, project sharing, open source contribution, helping out the community and many such.
+
+Accessing Github central repository via HTTPS or SSH
+Here, transfer project means transfer changes as git is very lightweight and works on changes in a project. It internally does the transfer by using Lossless Compression Techniques and transferring compressed files. Https is the default way to access Github central repository.  
+
+By git remote add origin http_url: remote means the remote central repository. Origin corresponds to your central repository which you need to define (hereby giving HTTPS URL) in order to push changes to Github.
+Via SSH: connect to Linux or other servers remotely.
+If you access Github by ssh you don’t need to type your username and password every time you push changes to GitHub. 
+
+Terminal commands: 
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+This does the ssh key generation using RSA cryptographic algorithm.
+
+eval "$(ssh-agent -s)" -> enable information about local login session.
+
+ssh-add ~/.ssh/id_rsa -> add to ssh key.
+cat ~/.ssh/id_rsa (use .pub file if not able to connect)
+add this ssh key to github.
+
+
+Now, go to github settings -> new ssh key -> create key
+
+ssh -T git@github.com -> activate ssh key (test connection)
+
+
+Working with git – Important Git commands 
+Git user configuration (First Step)  
+
+git --version (to check git version)
+git config --global user.name "your name here"
+git config --global user.email "your email here"
+These are the information attached to commits.  
+
+Initialize directory 
+
+git init 
+initializes your directory to work with git and makes a local repository. .git folder is made (OR) 
+
+git clone http_url 
+This is done if we have an existing git repository and we want to copy its content to a new place.
+
+Connecting to the remote repository 
+
+git remote add origin http_url/ssh_url 
+connect to the central repo to push/pull. pull means adopting the changes on the remote repository to your local repository. push merges the changes from your local repository to the remote repository.  
+
+git pull origin master
+One should always first pull contents from the central repo before pushing so that you are updated with other team members’ work. It helps prevent merge conflicts. Here, master means the master branch (in Git).  
+
+Stash Area in git
+
+git stash
+Whichever files are present in the staging area, it will move that files to stash before committing it. 
+
+git stash pop
+Whenever we want files for commit from stash we should use this command.
+
+git stash clear
+
+git status: here, untracked files mean files that you haven’t added to the staging area. Changes are not staged for commit means you have staged the file earlier than you have made changes in that files in your working directory and the changes need to be staged once more. Changes ready to be committed: these are files that have been committed and are ready to be pushed to the central repository.  
+
+git status
+git commit -a -m "message for commit"
+-a: commit all files and for files that have been 
+     staged earlier need not to be git add once more
+-a option does that automatically.
+git push origin master -> pushes your files to 
+                         github master branch
+git push origin anyOtherBranch -> pushes any 
+                      other branch to github.
+git log ; to see all your commits
+git checkout commitObject(first 8 bits) file.txt-> 
+revert back to this previous commit for file file.txt
+Previous commits might be seen through the git log command. 
+
+HEAD -> pointer to our latest commit.  
+Ignoring files while committing
+
+In many cases, the project creates a lot of logs and other irrelevant files which are to be ignored. So to ignore those files, we have to put their names in“.gitignore” file.  
+
+touch .gitignore
+echo "filename.ext" >>.gitignore
+#to ignore all files with .log extension
+echo "*.log" > .gitignore
+Now the filenames written in the .gitignore file would be ignored while pushing a new commit. To get the changes between commits, commit, and working tree. 
+
+git diff
+The ‘git diff’ command compares the staging area with the working directory and tells us the changes made. It compares the earlier information as well as the current modified information. 
+
+Branching in Git :
+create branch ->
+git branch myBranch
+or
+git checkout -b myBranch -> make and switch to the 
+                                  branch myBranch
+
+
+git checkout master ; to switch back to master branch
+
+git merge myBranch (writing in master branch)
+git push origin master
+
+git rm “file name”
+git rm –cached “ file name”
+
+
+
+
+
+
+
+
+
