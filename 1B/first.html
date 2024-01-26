@@ -1,0 +1,44 @@
+<!-- using ajax function -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#bt1").click(function () {
+                const obj = { name: $("#name").val(), mail: $("#mail").val(), contact: $("#contact").val() };
+                const myjson = JSON.stringify(obj);
+                localStorage.setItem("name", myjson);
+                $("#div1").load("http://127.0.0.1:5500/new/second.html");
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+
+    <h1>Student Details</h1>
+    <div id="div1">
+        <label for="name">Enter Name</label>
+        <input id="name" type="text" placeholder="name">
+        <br><br>
+        <label for="contact">Enter contact</label>
+        <input id="contact" type="number">
+        <br><br>
+        <label for="mail">Enter mail</label>
+        <input id="mail" type="email" placeholder="mail">
+        <br><br>
+        <button id="bt1">Submit</button>
+
+    </div>
+</body>
+
+</html>
