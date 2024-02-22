@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    background-color: white;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: black; 
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #7d00ff; 
+    border-radius: 10px;
+}
+/* navbar */
+
+.navbar{
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 0px 200px;
+}
+
+.logo{
+    cursor: pointer;
+}
+.nav{
+    list-style: none;
+    display: flex;
+    padding: 30px;
+}
+
+.nav-items{
+    padding: 10px;
+}
+
+.nav-items a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    z-index: 1;
+    text-decoration: none;
+    justify-content: center; /* Metni yatayda ortalamak için ekledik */
+}
+
+.nav-items a .link-text {
+    margin-left: 8px;
+    transition: opacity 0.4s;
+    opacity: 1;
+}
+
+.nav-items a i {
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.4s;
+    position: absolute;
+    left: 50%; /* Ikonu yatayda ortalamak için ekledik */
+    transform: translateX(-50%); /* Ikonu yatayda ortalamak için ekledik */
+}
+
+.nav-items a:hover .link-text {
+    opacity: 0;
+}
+
+.nav-items a:hover i {
+    opacity: 1;
+}
+
+.nav-items a::before{
+    content: ''; 
+    width: 100%;
+    height: 0px;
+    background: #7d00ff;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: -0px;
+    border-radius: 8px;
+    transition: height 0.4s;
+}
+.nav-items a:hover::before{
+    height: 100%;
+}
+.btn{
+    color: white;
+    padding: 10px 30px ;
+    background-color: #7d00ff;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: all 0.4s;
+
+}
+.btn .ok{
+    transition: all 0.4s;
+}
+
+.btn:hover{
+    padding: 10px 40px;
+}
+
+/* navbar end */
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href=""><img src="https://1000logos.net/wp-content/uploads/2018/10/Minecraft-Logo.png" alt="logo" width="150px"></a> <!-- Your Logo -->
+        </div>
+        <ul class="nav">
+            <li class="nav-items"><a href="/about"><span class="link-text">Home</span><i class="fa-solid fa-house"></i></a></li>
+            <li class="nav-items"><a href="/contact"><span class="link-text">Contact Us</span><i class="fa-solid fa-store"></i></a></li>
+            <li class="nav-items"><a href="/about"><span class="link-text">About Us</span><i class="fa-solid fa-user"></i></a></li>
+            <li class="nav-items"><a href="/login"><span class="link-text">Login</span><i class="fa-solid fa-circle-info"></i></a></li>
+        </ul>
+        <a href="" class="btn">Login <i class="fa-solid fa-chevron-right ok"></i></a>
+    </nav>
+    <h1>This is Login</h1>
+</body>
+</html>
