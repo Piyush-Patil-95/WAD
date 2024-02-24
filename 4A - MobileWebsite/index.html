@@ -1,0 +1,106 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Theme Download</title>
+	<link rel="stylesheet" href="themes/mobileWebsite.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" id="page" data-theme="a">
+		<div data-role="header">
+			<h1>Student Details</h1>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page">Home</a></li>
+				<li><a href="#page1">Fill Form</a></li>
+				<li><a href="#page2">About Us</a></li>
+			</ul>
+		</div>
+		<div data-role="main" style="text-align: center;">
+			<h3>This is Home Page</h3>
+			<h4>MVP Karmaveer Adv. Baburao Ganpatrao <br>Thakare College of Engineering KBTCOE</h4>
+			<img src="clg.png" alt="">
+		</div>
+		<div data-role="footer">
+			<h3>This is footer</h3>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="page1" data-theme="a">
+		<div data-role="header">
+			<h1>Student Details</h1>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page">Home</a></li>
+				<li><a href="#page1">Fill Form</a></li>
+				<li><a href="#page2">About Us</a></li>
+			</ul>
+		</div>
+		<div data-role="main">
+			<h2>Fill form</h2>
+			<div data-role="content">
+				<label for="">Enter Name</label>
+				<input type="text">
+
+				<label for="">Enter Email</label>
+				<input type="email">
+
+				<fieldset data-role="controlgroup">
+					<legend>Gender:</legend>
+					<input type="radio" name="gender" id="male" value="male" checked>
+					<label for="male">Male</label>
+					<input type="radio" name="gender" id="female" value="female">
+					<label for="female">Female</label>
+				</fieldset>
+
+				<label for="year">Year</label>
+				<select name="year" id="year">
+					<option value="fe">FE</option>
+					<option value="se">SE</option>
+					<option value="te">TE</option>
+					<option value="be">BE</option>
+				</select>
+				<a href="#page" style="text-decoration: none;"><button>Submit</button> </a>
+			</div>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="page2" data-theme="a">
+		<div data-role="header">
+			<h1>Student Details</h1>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page">Home</a></li>
+				<li><a href="#page1">Fill Form</a></li>
+				<li><a href="#page2">About Us</a></li>
+			</ul>
+		</div>
+		<div data-role="main" style="text-align: center;">
+
+			<h1><a href="" id="showContent">Know me </a></h1>
+			<div id="hiddenContent" style="display: none;">
+				<h2>Hellooooooooooooooo <br>I'm Piyush <br>From <br>TE-IT</h2>
+			</div>
+			<script>
+				$(document).ready(function () {
+					$("#showContent").click(function () {
+						$("#hiddenContent").toggle();
+					});
+				});
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
